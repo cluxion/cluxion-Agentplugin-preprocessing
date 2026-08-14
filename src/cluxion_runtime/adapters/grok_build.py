@@ -11,14 +11,13 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 GROK_COMPOSER_25_FAST = "grok-composer-2.5-fast"
-GROK_BUILD_MODEL = "grok-4.5"
 
 
 def build_grok_composer_command(
     prompt: str,
     *,
     cwd: Path,
-    model: str = GROK_BUILD_MODEL,
+    model: str,
     json_output: bool = True,
     check: bool = True,
 ) -> tuple[str, ...]:
@@ -32,4 +31,4 @@ def build_grok_composer_command(
     return tuple(cmd)
 
 
-__all__ = ["GROK_BUILD_MODEL", "GROK_COMPOSER_25_FAST", "build_grok_composer_command"]
+__all__ = ["GROK_COMPOSER_25_FAST", "build_grok_composer_command"]
